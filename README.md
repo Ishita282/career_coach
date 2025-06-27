@@ -1,49 +1,91 @@
-AI Career Coach
+# 💼 AI Career Coach
 
-AI Career Coach is a web app that helps users improve their careers by analyzing resumes, giving personalized advice, and offering interview prep — powered by Next.js and OpenAI.
-🚀 Features
+**AI Career Coach** is a web app designed to help users boost their careers by analyzing resumes, offering personalized guidance, and simulating interview practice — powered by **Next.js**, **Clerk**, and **Google Gemini**.
 
-    Resume upload & analysis
+---
 
-    Career and job advice
+## 🚀 Features
 
-    Interview Q&A practice
+- 📄 Resume upload & analysis  
+- 💡 Career and job advice  
+- 🎤 Interview Q&A practice  
+- ⚡ Fast, responsive, and modern UI  
 
-    Fast and responsive UI
+---
 
-🛠️ Tech Stack
+## 🛠️ Tech Stack
 
-    Frontend: Next.js, Tailwind CSS
+- **Frontend**: Next.js, Tailwind CSS  
+- **Backend**: Node.js, Prisma, Google Gemini api
+- **Auth**: Clerk  
+- **Database**: PostgreSQL (Neon or Docker)  
 
-    Backend: Node.js, OpenAI API
+---
 
-📦 Setup
+## 📦 Setup Instructions
 
-    git clone https://github.com/Ishita282/career-coach.git
-    cd ai-career-coach
-    npm install
+### 1. Clone the Repository
 
-Create a .env file:
+```bash
+git clone https://github.com/Ishita282/career-coach.git
+cd ai-career-coach
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Set Up the Database
+
+Push the schema to your PostgreSQL database:
+
+```bash
+npx prisma db push
+```
+
+### 4. Create a `.env` File
 
 ```env
-DATABASE_URL="postgresql://<db_usernanme>:<db_password>@<host>:<port>/career_coach?schema=public"
+# PostgreSQL Database
+DATABASE_URL="postgresql://<username>:<password>@<host>:<port>/career_coach?schema=public"
 
-
-# get api kry from https://dashboard.clerk.com/last-active?path=api-keys
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=<read above comment>
-CLERK_SECRET_KEY=<read above comment>
+# Clerk Authentication (https://dashboard.clerk.com/)
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=<your-clerk-publishable-key>
+CLERK_SECRET_KEY=<your-clerk-secret-key>
 
 NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
 NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
 NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/onboarding
 NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/onboarding
 
-GEMINI_API_KEY=<gemini api key>
-
-# to be used in docker while development 
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=postgres1111
+# Gemini API (https://makersuite.google.com/app/apikey)
+GEMINI_API_KEY=<your-gemini-api-key>
 ```
-Run the app:
 
+### 5. Run in Development Mode
+
+```bash
+npm run dev
+```
+
+### 6. For Production
+
+```bash
 npm start
+```
+
+---
+
+## 📄 License
+
+MIT License. Feel free to use, modify, and share.
+
+---
+
+## ✨ Contributions
+
+Pull requests are welcome! For major changes, please open an issue first to discuss what you'd like to change.
+
+---
